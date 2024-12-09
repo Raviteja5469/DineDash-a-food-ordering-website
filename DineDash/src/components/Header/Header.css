@@ -1,12 +1,13 @@
-.header{
+.header {
     height: 34vw;
     margin: 0px auto;
-    background-image: url('/public/header_img.png');
-    background-size: fill;   
+    background-image: url('/header_img.png');
+    background-size: cover; /* Use cover to ensure the image covers the header */
+    background-position: center; /* Center the background image */
     position: relative;
 }
 
-.header_content{
+.header_content {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -15,14 +16,109 @@
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
+    animation: fade_in 2s;
 }
-.header_content p{
+
+.header_content p {
+    display: flex;
     font-weight: 500;
     color: white;
-
-    /* font-size: max(4.5vw,22px); */
+    font-size: 1.5vw;
 }
-.header_content h1{
+
+.header_content h1 {
+    display: flex;
     font-size: max(6vw, 30px);
     color: white;
+}
+
+.header_content button {
+    border: none;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 50px;
+    border: 1px solid rgb(255, 76, 6);
+    color: rgb(252, 97, 36);
+    padding: 1vw 2.3vw;
+    cursor: pointer;
+    transition: 5ms;
+}
+
+.header_content button:hover {
+    color: white;
+    background-color: rgb(255, 72, 0);
+    border: 1px solid white;
+}
+
+.header_content h1 p button {
+    display: flex;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .header {
+        height: 50vw; /* Adjust height for medium screens */
+    }
+    
+    .header_content {
+        left: 4vw; /* Adjust alignment for medium screens */
+    }
+
+    .header_content p {
+        font-size: 2vw; /* Adjust font size for medium screens */
+    }
+
+    .header_content h1 {
+        font-size: max(5vw, 28px); /* Adjust font size for medium screens */
+    }
+
+    .header_content button {
+        padding: 1.5vw 3vw; /* Adjust button padding for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60vw; /* Adjust height for small screens */
+    }
+
+    .header_content {
+        left: 2vw; /* Adjust alignment for small screens */
+        max-width: 70%; /* Adjust max-width for small screens */
+    }
+
+    .header_content p {
+        font-size: 2.5vw; /* Adjust font size for small screens */
+    }
+
+    .header_content h1 {
+        font-size: max(7vw, 26px); /* Adjust font size for small screens */
+    }
+
+    .header_content button {
+        padding: 2vw 4vw; /* Adjust button padding for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 70vw; /* Adjust height for extra small screens */
+    }
+
+    .header_content {
+        left: 1vw; /* Adjust alignment for extra small screens */
+        max-width: 90%; /* Adjust max-width for extra small screens */
+    }
+
+    .header_content p {
+        font-size: 3vw; /* Adjust font size for extra small screens */
+    }
+
+    .header_content h1 {
+        font-size: max(9vw, 24px); /* Adjust font size for extra small screens */
+    }
+
+    .header_content button {
+        padding: 3vw 5vw; /* Adjust button padding for extra small screens */
+    }
 }
