@@ -26,9 +26,9 @@
     margin: 20px 0px;
     /* overflow-x: scroll; */
 }
-.explore_menu_list::-webkit-scrollbar{
-/* display: none; */
-}
+/* .explore_menu_list::-webkit-scrollbar{
+display: none;
+} */
 .explore_menu_list_item img{
     width: 7.5vw;
     min-width: 80px;
@@ -47,4 +47,8 @@
     margin: 10px 0px;
     height: 2px;
     border: none;
+}
+.explore_menu_list_item .active{
+    border: 4px solid tomato;
+    padding: 2px;
 }
