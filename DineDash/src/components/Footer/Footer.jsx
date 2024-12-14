@@ -1,6 +1,6 @@
-import React from 'react'
-import './Footer.css'
-import { assets } from '../../assets/frontend_assets/assets'
+import React from 'react';
+import './Footer.css';
+import { assets } from '../../assets/frontend_assets/assets';
 
 const Footer = () => {
   return (
@@ -31,13 +31,13 @@ const Footer = () => {
                 <li>contact@DineDash.com</li>
             </ul>
         </div>
-        <hr />
+      </div>
+      <hr />
       <p className="footer_copyright">
         Copyright 2024 @DineDash.com-All Right Reserverd.
       </p>
-      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

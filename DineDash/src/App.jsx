@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/home'
 import Footer from './components/Footer/Footer'
+import LoginPopUp from './components/LoginPopUp/LoginPopUp'
 const App = () => {
+
+  const[showLogin,setShowLogin]= useState(false)
   return (
     <>
+    {showLogin?<LoginPopUp/>:<></>}
       <div className='app'>
+        
+
       <Home/>
       <Routes>
         <Route path="/" element={<home />} />
