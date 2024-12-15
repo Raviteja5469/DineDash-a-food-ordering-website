@@ -32,7 +32,7 @@ const Footer = () => {
             </ul>
         </div>
       </div>
-      <hr />
+      <hr className='hr_footer'/>
       <p className="footer_copyright">
         Copyright 2024 @DineDash.com-All Right Reserverd.
       </p>

@@ -4,7 +4,6 @@ import './placeorder.css'
 const placeorder = () => {
   return (
     <div>
-      
     </div>
   )
 }

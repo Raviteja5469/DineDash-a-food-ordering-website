@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './navbar.css';
 import { assets } from '../../assets/frontend_assets/assets';
 import { Link } from 'react-router-dom';
+import { StoreContext } from '../context/StoreContext';
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
     const [menu, setMenu] = useState('Home');
+
+    const {getTotalCartAmount} = useContext(StoreContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -13,10 +16,10 @@ const Navbar = () => {
 
     return (
         <div className='navbar'>
-            <div className="logo_with_name">
+            <Link to='/'><div className="logo_with_name">
                 <img src={assets.logo} alt="" className="logo" />
                 <h1>DineDash</h1>
-            </div>
+            </div></Link>
             <div className={`navbar_options_menu ${isMenuOpen ? 'active' : ''}`}>
                 <ul>
                     <Link to='/' onClick={() => setMenu("Home")} className={menu === 'Home' ? "active" : ""}>Home</Link>
@@ -28,17 +31,17 @@ const Navbar = () => {
             <div className="nav_bar_right">
                 <img src={assets.search_icon} alt="" />
                 <div className="nav_bar_search_icon">
-                    <img src={assets.basket_icon} alt="" />
-                    <div className="dot"></div>
+                   <Link to='/cart'> <img src={assets.basket_icon} alt="" /></Link>
+                    <div className={getTotalCartAmount()===0?"":"dot"}></div>
                 </div>
-                <button>Sign In</button>
-                <button className="sign-up">Sign Up</button>
+                {/* <button>Sign In</button> */}
+                <button onClick={()=>setShowLogin(true)} className="sign-up">Sign Up</button>
             </div>
-            <div className="menu_toggle" onClick={toggleMenu}>
+            {/* <div className="menu_toggle" onClick={toggleMenu}>
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div> */}
         </div>
     );
 };
