@@ -5,7 +5,7 @@ import Cart from './pages/cart/cart';
 import Footer from './components/Footer/Footer';
 import LoginPopUp from './components/LoginPopUp/LoginPopUp';
 import Navbar from './components/Navbar/navbar';
-import PlaceOrder from './pages/PlaceOrder/PlaceOrder'; // Assuming this is the correct path
+import PlaceOrder from './pages/Placeorder/Placeorder'; // Assuming this is the correct path
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
