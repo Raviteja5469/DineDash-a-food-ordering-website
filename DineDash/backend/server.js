@@ -1,34 +1,36 @@
-// import express from "express";
-// import cors from "cors";
+import express from "express";
+import cors from "cors";
+import { connectDB } from "./config/db.js";
+import foodRouter from "./routes/foodRoute.js";
 
 
-// //app configuration
+//app configuration
 
-// const app = express()
-// const port = 4000
+const app = express()
+const port = 4000
 
-// //middleware
+//middleware
 
-// app.use(express.json())
-// app.use(cors())
+app.use(express.json())
+app.use(cors())
 
-// app.get("/",(req,res)=>{
-//     res.send("It is working")
-// })
+//Database connection
 
-// app.listen(port,()=>{
-//     console.log(`server started on http://localhost:${port}`)
-// })
+connectDB();
 
-import express from 'express';
+// API endpoint
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+app.use("/api/food",foodRouter)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.get("/",(req,res)=>{
+    res.send("It is working 1")
+})
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(port,()=>{
+    console.log(`server started on http://localhost:${port}`)
+})
+
+//mongodb+srv://Dinedash:<db_password>@cluster0.qt2rl.mongodb.net/?
+// mongodb+srv://Dinedash:ravi%40%40@cluster0.qt2rl.mongodb.net/DineDash?retryWrites=true&w=majority    true passord changed for this @@
+
+
